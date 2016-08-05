@@ -16,6 +16,9 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
+adjectives = ["Salty", "Silly", "Wet", "Fluffy", "Angry", "Sticky", "Sexy"]
+nouns = ["Whale", "Pirate", "Parrot", "Mermaid", "Sea-Lion", "Ape", "Sailor"]
+
 def find_pref():
     preferences = {}
     for key, value in questions.items():
@@ -32,7 +35,7 @@ def mix_drink(value):
 
 def main():
     results = find_pref()
-    print("\nGreat, I reccomend a: ")
+    print("\nGreat, I call this one the " + random.choice(adjectives) + ' ' + random.choice(nouns)+ ", It contains a:")
     for drink in mix_drink(results):
         print(drink)
 main()
