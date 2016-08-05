@@ -16,11 +16,24 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-def find_preferences():
+def find_pref():
     preferences = {}
-    question = questions.values()
-    for question in questions.values():
-        print(question)
-        preferences[type] = input().lower() in ["y", "yes"]
-        print("")
+    for key, value in questions.items():
+        user_input = input(value + '')
+        preferences[key] = (user_input.lower() == "y" or user_input.lower() == "yes")
     return preferences
+
+def mix_drink(value):
+    my_drink = []
+    for key, value in value.items():
+        if value == True:
+            my_drink.append(random.choice(ingredients[key]))
+    return my_drink
+
+def main():
+    results = find_pref()
+    print("\nGreat, I reccomend a: ")
+    for drink in mix_drink(results):
+        print(drink)
+main()
+
