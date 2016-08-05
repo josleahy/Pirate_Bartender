@@ -1,0 +1,1 @@
+For this project, I had to view the sample solution for help. However, I took it peice by peice and figured out how each worked, and then changed a little bit so that it made more sense to me, but still functioned the same.
